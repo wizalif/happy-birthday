@@ -88,14 +88,7 @@ Happy Birthday, my beautiful girl. 🌹❤️
 </p>
 
 <div class="gallery">
-
-<img src="photo1.jpg">
-<img src="photo2.jpg">
-<img src="photo3.jpg">
-<img src="photo4.jpg">
-<img src="photo5.jpg">
-<img src="photo6.jpg">
-
+<img id="slide" src="photo1.jpg" alt="Our Memory">
 </div>
 
 <div class="letter">
@@ -156,6 +149,21 @@ heart.remove();
 }
 
 setInterval(createHeart,400);
+    const photos = [
+"photo1.jpg",
+"photo2.jpg",
+"photo3.jpg",
+"photo4.jpg",
+"photo5.jpg",
+"photo6.jpg"
+];
+
+let current = 0;
+
+setInterval(() => {
+current = (current + 1) % photos.length;
+document.getElementById("slide").src = photos[current];
+}, 3000);
 </script>
 
 </body>
