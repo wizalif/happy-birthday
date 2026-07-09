@@ -61,6 +61,20 @@ width:80%;
 font-size:30px;
 margin:40px;
 }
+  .heart{
+position:fixed;
+top:-10px;
+font-size:24px;
+animation:fall linear forwards;
+pointer-events:none;
+}
+
+@keyframes fall{
+to{
+transform:translateY(110vh);
+opacity:0;
+}
+}
 </style>
 
 </head>
@@ -127,6 +141,22 @@ With love,
 ❤️ Forever With You ❤️
 
 </div>
+  <script>
+function createHeart(){
+const heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="❤️";
+heart.style.left=Math.random()*100+"vw";
+heart.style.animationDuration=(3+Math.random()*3)+"s";
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},6000);
+}
+
+setInterval(createHeart,400);
+</script>
 
 </body>
 </html>
