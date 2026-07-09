@@ -4,16 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Happy Birthday Sitrelah ❤️</title>
+<title>Happy Birthday, Situuu ❤️</title>
 
 <style>
-body{
+
+*{
 margin:0;
 padding:0;
-background:linear-gradient(135deg,#ff9ec4,#ffd6e8);
+box-sizing:border-box;
+}
+
+body{
 font-family:Arial,sans-serif;
-text-align:center;
+background:linear-gradient(135deg,#ff9ec4,#ffd6e8);
 overflow-x:hidden;
+text-align:center;
 }
 
 .container{
@@ -21,35 +26,38 @@ padding:40px 20px;
 }
 
 h1{
+font-size:55px;
 color:white;
-font-size:50px;
-margin-top:20px;
+margin-top:30px;
 animation:zoom 2s infinite alternate;
 }
 
 h2{
 color:white;
+margin-top:15px;
 }
 
 p{
 font-size:22px;
 color:white;
+margin-top:15px;
+line-height:1.7;
 }
 
 @keyframes zoom{
 from{transform:scale(1);}
-to{transform:scale(1.08);}
+to{transform:scale(1.06);}
 }
 
 button{
+margin-top:30px;
 padding:15px 35px;
 font-size:20px;
 background:#ff2d75;
 color:white;
 border:none;
-border-radius:40px;
+border-radius:50px;
 cursor:pointer;
-margin-top:20px;
 transition:.3s;
 }
 
@@ -58,26 +66,29 @@ background:#ff0055;
 transform:scale(1.05);
 }
 
+.gallery{
+margin-top:40px;
+}
+
 .gallery img{
-width:280px;
-border-radius:20px;
+width:260px;
 margin:10px;
+border-radius:20px;
 box-shadow:0 0 20px rgba(0,0,0,.3);
 }
 
 #letter{
 display:none;
-margin-top:40px;
 background:white;
-padding:25px;
-border-radius:20px;
 max-width:700px;
-margin-left:auto;
-margin-right:auto;
+margin:40px auto;
+padding:30px;
+border-radius:20px;
+color:#444;
 font-size:20px;
 line-height:1.8;
-color:#444;
 }
+
 </style>
 </head>
 
@@ -85,62 +96,69 @@ color:#444;
 
 <div class="container">
 
-<h1>🎂 Happy Birthday Sitrelah ❤️</h1>
+<h1>🎂 Happy Birthday, Situuu ❤️</h1>
 
-<h2>May Allah bless you with happiness 🤲</h2>
-
-<p>You are the most beautiful gift in my life 🌹</p>
-
-<button onclick="showLetter()">🎁 Open My Surprise</button>
-
-<div id="letter">
-  <h2>💖 My Dear Sitrelah 💖</h2>
+<h2>Assalamu Alaikum 🌹</h2>
 
 <p>
-Happy Birthday, my love. ❤️<br><br>
+Today is your special day.<br>
+May Allah fill your life with happiness,<br>
+success and endless smiles. 🤲❤️
+</p>
 
-On this special day, I pray that Allah fills your life with happiness,
-good health, success, and endless smiles. 🤲🌹
+<button onclick="showLetter()">
+🎁 Open Your Surprise
+</button>
 
-Thank you for being part of my life.
-You are kind, beautiful, caring, and very special to me.
+<div id="letter">
 
-I hope this new year of your life brings you peace, joy,
-and all the dreams you wish for.
+<h2>💖 Dear Situuu 💖</h2>
 
-May Allah always protect you and keep your heart full of happiness.
+<p>
+Happy Birthday, my beautiful Situuu. ❤️<br><br>
 
-Happy Birthday once again, Sitrelah. 🎂❤️
+Every moment with you is special.<br>
 
-With love,<br>
-❤️ Alif ❤️
+Your smile makes every day brighter.<br><br>
+
+I pray Allah grants you happiness,
+good health,
+success,
+peace,
+and everything your heart wishes for. 🤲🌹
+
+<br><br>
+
+Thank you for being an amazing person.
+
+<br><br>
+
+With Love ❤️<br>
+
+<b>Alif</b>
+
 </p>
 
 </div>
-
 <div class="gallery">
-
-<img src="photo1.jpg" alt="photo 1">
-<img src="photo2.jpg" alt="photo 2">
-<img src="photo3.jpg" alt="photo 3">
-<img src="photo4.jpg" alt="photo 4">
-<img src="photo5.jpg" alt="photo 5">
-<img src="photo6.jpg" alt="photo 6">
-
+<img src="photo1.jpg" alt="Photo 1">
+<img src="photo2.jpg" alt="Photo 2">
+<img src="photo3.jpg" alt="Photo 3">
+<img src="photo4.jpg" alt="Photo 4">
+<img src="photo5.jpg" alt="Photo 5">
+<img src="photo6.jpg" alt="Photo 6">
 </div>
 
-<audio autoplay loop controls>
+<audio id="music" controls loop>
 <source src="music.mp3" type="audio/mpeg">
 </audio>
 
 <script>
-  <audio controls autoplay loop>
-
-<source src="music.mp3" type="audio/mpeg">
-
-</audio>
 function showLetter(){
-document.getElementById("letter").style.display="block";
+    document.getElementById("letter").style.display="block";
+
+    const music = document.getElementById("music");
+    music.play().catch(()=>{});
 }
 </script>
 
