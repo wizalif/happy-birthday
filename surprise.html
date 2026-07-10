@@ -3,179 +3,147 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>My Surprise ❤️</title>
 
 <style>
-body{
+*{
 margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
 font-family:Arial,sans-serif;
 background:linear-gradient(135deg,#ff6fa5,#ffd6e8);
 text-align:center;
-color:white;
 overflow-x:hidden;
+color:white;
+}
+
+.container{
+padding:30px;
 }
 
 h1{
-margin-top:30px;
 font-size:45px;
+margin-top:20px;
+animation:fade 2s infinite alternate;
+}
+
+@keyframes fade{
+from{transform:scale(1);}
+to{transform:scale(1.05);}
 }
 
 p{
 font-size:22px;
-padding:0 20px;
+margin:20px;
+line-height:1.8;
 }
 
-.gallery{
-display:flex;
-overflow-x:auto;
-gap:15px;
-padding:20px;
-scroll-snap-type:x mandatory;
-}
-
-.gallery img{
-width:320px;
+.photo{
+width:300px;
 max-width:90%;
 border-radius:20px;
-box-shadow:0 0 20px rgba(0,0,0,.4);
-transition:0.8s;
+box-shadow:0 0 20px rgba(0,0,0,.3);
+margin-top:20px;
 }
 
 .letter{
 background:white;
 color:#444;
-max-width:750px;
-margin:30px auto;
 padding:25px;
 border-radius:20px;
-line-height:1.8;
+max-width:700px;
+margin:30px auto;
 font-size:20px;
-}
-
-audio{
-margin:30px;
-width:80%;
-}
-
-.end{
-font-size:30px;
-margin:40px;
-}
-  .heart{
-position:fixed;
-top:-10px;
-font-size:24px;
-animation:fall linear forwards;
-pointer-events:none;
-}
-
-@keyframes fall{
-to{
-transform:translateY(110vh);
-opacity:0;
-}
-}
-  #fireworks{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-pointer-events:none;
-z-index:-1;
+line-height:1.8;
 }
 </style>
-
 </head>
 
 <body>
 
-<h1>💖 Welcome My Princess Sitrelah 💖</h1>
+<div class="container">
+
+<h1>💖 Welcome My Beautiful Situuu 💖</h1>
 
 <p>
-Happy Birthday, my beautiful girl. 🌹❤️
+May Allah bless your life with happiness,
+peace,
+good health,
+and endless smiles. 🤲❤️
 </p>
 
-<div class="gallery">
-<img id="slide" src="photo1.jpg" alt="Our Memory">
-</div>
+<img id="slide" class="photo" src="photo1.jpg">
 
 <div class="letter">
 
 <h2>💌 My Letter</h2>
 
 <p>
-
-Happy Birthday, Sitrelah. ❤️
-
-May Allah bless your life with happiness,
-good health,
-peace,
-success,
-and endless smiles.
+Happy Birthday, Sitrelah. ❤️<br><br>
 
 Thank you for being such a wonderful person.
 
-I pray that every dream in your heart comes true.
+I pray Allah gives you happiness,
+success,
+and protects you every single day.
 
-Keep smiling,
-keep shining,
-and always stay the amazing girl you are.
+Never stop smiling.
 
-I will always wish the very best for you.
+🌹❤️
 
-🎂❤️
-
-With love,
-
+With love,<br>
 <b>Alif</b>
-
 </p>
 
 </div>
-
-<audio controls autoplay loop>
-<source src="music.mp3" type="audio/mpeg">
+<audio id="music" controls loop>
+    <source src="music.mp3" type="audio/mpeg">
 </audio>
 
-<div class="end">
-
-❤️ Forever With You ❤️
-
-</div>
-  <script>
-function createHeart(){
-const heart=document.createElement("div");
-heart.className="heart";
-heart.innerHTML="❤️";
-heart.style.left=Math.random()*100+"vw";
-heart.style.animationDuration=(3+Math.random()*3)+"s";
-document.body.appendChild(heart);
-
-setTimeout(()=>{
-heart.remove();
-},6000);
-}
-
-setInterval(createHeart,400);
-    const photos = [
-"photo1.jpg",
-"photo2.jpg",
-"photo3.jpg",
-"photo4.jpg",
-"photo5.jpg",
-"photo6.jpg"
+<script>
+const photos = [
+    "photo1.jpg",
+    "photo2.jpg",
+    "photo3.jpg",
+    "photo4.jpg",
+    "photo5.jpg",
+    "photo6.jpg"
 ];
 
 let current = 0;
 
-setInterval(() => {
-current = (current + 1) % photos.length;
-document.getElementById("slide").src = photos[current];
-}, 3000);
+setInterval(function () {
+    current = (current + 1) % photos.length;
+    document.getElementById("slide").src = photos[current];
+}, 2500);
+
+// Falling Hearts ❤️
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.innerHTML = "❤️";
+    heart.style.position = "fixed";
+    heart.style.left = Math.random() * window.innerWidth + "px";
+    heart.style.top = "-30px";
+    heart.style.fontSize = "24px";
+    heart.style.pointerEvents = "none";
+    heart.style.transition = "top 5s linear";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.style.top = "110vh";
+    }, 100);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 5000);
+}
+
+setInterval(createHeart, 500);
 </script>
-  <canvas id="fireworks"></canvas>
-  
+
 </body>
 </html>
