@@ -3,164 +3,78 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Happy Birthday, Situuu ❤️</title>
+<title>Happy Birthday Situuu ❤️</title>
 
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
 body{
+margin:0;
 font-family:Arial,sans-serif;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
 background:linear-gradient(135deg,#ff9ec4,#ffd6e8);
-overflow-x:hidden;
 text-align:center;
+overflow:hidden;
 }
 
-.container{
-padding:40px 20px;
+.card{
+background:white;
+padding:40px;
+border-radius:25px;
+width:90%;
+max-width:500px;
+box-shadow:0 10px 30px rgba(0,0,0,.2);
 }
 
 h1{
-font-size:55px;
-color:white;
-margin-top:30px;
-animation:zoom 2s infinite alternate;
-}
-
-h2{
-color:white;
-margin-top:15px;
+color:#ff2d75;
+font-size:40px;
 }
 
 p{
-font-size:22px;
-color:white;
-margin-top:15px;
-line-height:1.7;
-}
-
-@keyframes zoom{
-from{transform:scale(1);}
-to{transform:scale(1.06);}
+font-size:20px;
+color:#555;
+line-height:1.6;
 }
 
 button{
-margin-top:30px;
+margin-top:20px;
 padding:15px 35px;
 font-size:20px;
+border:none;
+border-radius:40px;
 background:#ff2d75;
 color:white;
-border:none;
-border-radius:50px;
 cursor:pointer;
 transition:.3s;
 }
 
 button:hover{
-background:#ff0055;
 transform:scale(1.05);
+background:#ff0055;
 }
-
-.gallery{
-margin-top:40px;
-}
-
-.gallery img{
-width:260px;
-margin:10px;
-border-radius:20px;
-box-shadow:0 0 20px rgba(0,0,0,.3);
-}
-
-#letter{
-display:none;
-background:white;
-max-width:700px;
-margin:40px auto;
-padding:30px;
-border-radius:20px;
-color:#444;
-font-size:20px;
-line-height:1.8;
-}
-
 </style>
+
 </head>
 
 <body>
 
-<div class="container">
+<div class="card">
 
 <h1>🎂 Happy Birthday, Situuu ❤️</h1>
 
-<h2>Assalamu Alaikum 🌹</h2>
-
 <p>
-Today is your special day.<br>
-May Allah fill your life with happiness,<br>
-success and endless smiles. 🤲❤️
+Today is your special day 🌹<br><br>
+
+I made something special just for you.
 </p>
 
-<button onclick="window.location.href='surprise.html'">
+<button onclick="location.href='surprise.html'">
 🎁 Open My Surprise
 </button>
 
-<div id="letter">
-
-<h2>💖 Dear Situuu 💖</h2>
-
-<p>
-Happy Birthday, my beautiful Situuu. ❤️<br><br>
-
-Every moment with you is special.<br>
-
-Your smile makes every day brighter.<br><br>
-
-I pray Allah grants you happiness,
-good health,
-success,
-peace,
-and everything your heart wishes for. 🤲🌹
-
-<br><br>
-
-Thank you for being an amazing person.
-
-<br><br>
-
-With Love ❤️<br>
-
-<b>Alif</b>
-
-</p>
-
 </div>
-<div class="gallery">
-<img src="photo1.jpg" alt="Photo 1">
-<img src="photo2.jpg" alt="Photo 2">
-<img src="photo3.jpg" alt="Photo 3">
-<img src="photo4.jpg" alt="Photo 4">
-<img src="photo5.jpg" alt="Photo 5">
-<img src="photo6.jpg" alt="Photo 6">
-</div>
-
-<audio id="music" controls loop>
-<source src="music.mp3" type="audio/mpeg">
-</audio>
-
-<script>
-function showLetter(){
-    document.getElementById("letter").style.display="block";
-
-    const music = document.getElementById("music");
-    music.play().catch(()=>{});
-}
-</script>
 
 </body>
 </html>
