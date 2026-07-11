@@ -111,6 +111,31 @@ to{
 transform:translateY(-120vh);
 }
 }
+ .sparkle{
+position:fixed;
+width:6px;
+height:6px;
+background:white;
+border-radius:50%;
+box-shadow:0 0 12px white;
+pointer-events:none;
+animation:twinkle 2s linear forwards;
+}
+
+@keyframes twinkle{
+0%{
+opacity:1;
+transform:scale(0);
+}
+50%{
+opacity:1;
+transform:scale(1.5);
+}
+100%{
+opacity:0;
+transform:scale(0);
+}
+}
 </style>
 </head>
 
@@ -273,6 +298,23 @@ function createBalloon(){
 }
 
 setInterval(createBalloon,1200);
+ // Sparkles
+function createSparkle(){
+
+  const sparkle = document.createElement("div");
+  sparkle.className = "sparkle";
+
+  sparkle.style.left = Math.random() * window.innerWidth + "px";
+  sparkle.style.top = Math.random() * window.innerHeight + "px";
+
+  document.body.appendChild(sparkle);
+
+  setTimeout(()=>{
+    sparkle.remove();
+  },2000);
+}
+
+setInterval(createSparkle,300);
 </script>
 
 </body>
