@@ -166,7 +166,7 @@ function firework() {
 
   for (let i = 0; i < 50; i++) {
     ctx.beginPath();
- ctx.fillStyle = hsl(${Math.random() * 360},100%,60%);
+ctx.fillStyle = `hsl(${Math.random() * 360},100%,60%)`;
     ctx.arc(
       x + Math.random() * 120 - 60,
       y + Math.random() * 120 - 60,
