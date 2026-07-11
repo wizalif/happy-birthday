@@ -68,6 +68,21 @@ height:100%;
 pointer-events:none;
 z-index:9999;
 }
+ .confetti{
+position:fixed;
+top:-20px;
+width:10px;
+height:10px;
+pointer-events:none;
+animation:confettiFall linear forwards;
+}
+
+@keyframes confettiFall{
+to{
+transform:translateY(110vh) rotate(720deg);
+opacity:0;
+}
+}
 </style>
 </head>
 
@@ -188,6 +203,27 @@ window.addEventListener("resize", () => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 });
+ // Confetti
+function createConfetti() {
+
+  const confetti = document.createElement("div");
+  confetti.className = "confetti";
+
+  confetti.style.left = Math.random() * window.innerWidth + "px";
+  confetti.style.background =
+   `hsl(${Math.random()*360},100%,60%)`;
+
+  confetti.style.animationDuration =
+    (3 + Math.random() * 3) + "s";
+
+  document.body.appendChild(confetti);
+
+  setTimeout(() => {
+    confetti.remove();
+  }, 6000);
+}
+
+setInterval(createConfetti, 200);
 </script>
 
 </body>
