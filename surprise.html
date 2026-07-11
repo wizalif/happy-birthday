@@ -83,6 +83,34 @@ transform:translateY(110vh) rotate(720deg);
 opacity:0;
 }
 }
+ .balloon{
+position:fixed;
+bottom:-120px;
+width:50px;
+height:70px;
+border-radius:50%;
+animation:balloonUp linear forwards;
+pointer-events:none;
+}
+
+.balloon::after{
+content:"";
+position:absolute;
+left:24px;
+top:70px;
+width:2px;
+height:50px;
+background:white;
+}
+
+@keyframes balloonUp{
+from{
+transform:translateY(0);
+}
+to{
+transform:translateY(-120vh);
+}
+}
 </style>
 </head>
 
@@ -224,6 +252,27 @@ function createConfetti() {
 }
 
 setInterval(createConfetti, 200);
+ // Balloons
+function createBalloon(){
+
+  const balloon = document.createElement("div");
+  balloon.className = "balloon";
+
+  balloon.style.left = Math.random() * window.innerWidth + "px";
+  balloon.style.background =
+   `hsl(${Math.random()*360},80%,70%)`;
+
+  balloon.style.animationDuration =
+    (6 + Math.random() * 4) + "s";
+
+  document.body.appendChild(balloon);
+
+  setTimeout(()=>{
+    balloon.remove();
+  },10000);
+}
+
+setInterval(createBalloon,1200);
 </script>
 
 </body>
