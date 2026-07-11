@@ -197,24 +197,8 @@ and endless smiles. 🤲❤️
 <div class="letter">
 
 <h2>💌 My Letter</h2>
-
-<p>
-Happy Birthday, Sitrelah. ❤️<br><br>
-
-Thank you for being such a wonderful person.
-
-I pray Allah gives you happiness,
-success,
-and protects you every single day.
-
-Never stop smiling.
-
-🌹❤️
-
-With love,<br>
-<b>Alif</b>
-</p>
-
+ 
+<p id="letterText"></p>
 </div>
  <canvas id="fireworks"></canvas>
 <audio id="music" controls loop>
@@ -382,6 +366,31 @@ function openGift(){
   alert("🎉 Happy Birthday Sitrelah! ❤️");
 
 }
+ const message =
+`Happy Birthday, Sitrelah. ❤️
+
+Thank you for being such a wonderful person.
+
+I pray Allah gives you happiness, success, good health, and protects you every single day.
+
+Never stop smiling. 🌹
+
+With Love,
+❤️ Alif ❤️`;
+
+let i = 0;
+
+function typeWriter() {
+
+  if (i < message.length) {
+    document.getElementById("letterText").innerHTML += message.charAt(i);
+    i++;
+    setTimeout(typeWriter, 50);
+  }
+
+}
+
+typeWriter();
 </script>
 
 </body>
