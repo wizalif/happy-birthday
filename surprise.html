@@ -154,6 +154,24 @@ transform:translateY(110vh) rotate(360deg);
 opacity:0;
 }
 }
+ .gift-box{
+margin:30px auto;
+width:180px;
+padding:20px;
+background:#ff4d6d;
+border-radius:20px;
+font-size:30px;
+font-weight:bold;
+color:white;
+cursor:pointer;
+box-shadow:0 0 20px rgba(0,0,0,.3);
+transition:0.3s;
+}
+
+.gift-box:hover{
+transform:scale(1.08);
+background:#ff2d55;
+}
 </style>
 </head>
 
@@ -162,6 +180,10 @@ opacity:0;
 <div class="container">
 
 <h1>💖 Welcome My Beautiful Situuu 💖</h1>
+<div id="giftBox" class="gift-box" onclick="openGift()">
+🎁<br>
+Open My Gift
+</div>
 
 <p>
 May Allah bless your life with happiness,
@@ -353,6 +375,13 @@ function createPetal(){
 }
 
 setInterval(createPetal,1500);
+function openGift(){
+
+  document.getElementById("giftBox").style.display = "none";
+
+  alert("🎉 Happy Birthday Sitrelah! ❤️");
+
+}
 </script>
 
 </body>
