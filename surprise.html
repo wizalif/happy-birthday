@@ -177,9 +177,13 @@ background:#ff2d55;
 
 <body>
 
-<div class="container">
+<div id="mainContent" class="container" style="display:none;">
 
 <h1>💖 Welcome My Beautiful Situuu 💖</h1>
+ <div id="welcome" style="text-align:center;margin-top:100px;">
+<h1>🎂 Happy Birthday Situu ❤️</h1>
+<p>Someone has a special surprise for you... 💖</p>
+</div>
 <div id="giftBox" class="gift-box" onclick="openGift()">
 🎁<br>
 Open My Gift
@@ -363,7 +367,13 @@ function openGift(){
 
   document.getElementById("giftBox").style.display = "none";
 
-  alert("🎉 Happy Birthday Sitrelah! ❤️");
+  document.getElementById("welcome").style.display = "none";
+
+  document.getElementById("mainContent").style.display = "block";
+
+  document.getElementById("music").play();
+
+  setTimeout(typeWriter,500);
 
 }
  const message =
@@ -391,7 +401,6 @@ function typeWriter() {
 
 }
 
-setTimeout(typeWriter, 1000);
 </script>
 
 </body>
