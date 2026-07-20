@@ -176,6 +176,10 @@ background:#ff2d55;
 </head>
 
 <body>
+ <div id="introScreen">
+    <h1>✨ For Someone Very Special ✨</h1>
+    <p>A beautiful surprise is waiting for you... ❤️</p>
+</div>
 
 <div class="container">
 
@@ -407,12 +411,56 @@ function typeWriter() {
 
 }
 
- window.onload = function () {
-  document.getElementById("welcome").style.display = "block";
-  document.getElementById("giftBox").style.display = "block";
-  document.getElementById("mainContent").style.display = "none";
+window.onload = function () {
+
+  document.getElementById("introScreen").style.display = "flex";
+
+  setTimeout(function(){
+
+    document.getElementById("introScreen").style.display = "none";
+
+    document.getElementById("welcome").style.display = "block";
+
+    document.getElementById("giftBox").style.display = "block";
+
+  },3000);
+
 };
- 
+
+ #introScreen{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:black;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+z-index:10000;
+text-align:center;
+animation:fadeOut 4s forwards;
+animation-delay:3s;
+}
+
+#introScreen h1{
+font-size:48px;
+color:white;
+margin-bottom:20px;
+}
+
+#introScreen p{
+font-size:22px;
+color:#ffd6e8;
+}
+
+@keyframes fadeOut{
+to{
+opacity:0;
+visibility:hidden;
+}
+}
 </script>
 
 </body>
