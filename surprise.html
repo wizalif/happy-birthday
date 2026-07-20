@@ -179,7 +179,6 @@ background:#ff2d55;
 
 <div class="container">
 
-<h1>💖 Welcome My Beautiful Situuu 💖</h1>
  <div id="welcome" style="text-align:center;margin-top:100px;">
 <h1>🎂 Happy Birthday Situu ❤️</h1>
 <p>Someone has a special surprise for you... 💖</p>
@@ -366,17 +365,21 @@ function createPetal(){
 }
 
 setInterval(createPetal,1500);
-function openGift(){
-
-  document.getElementById("giftBox").style.display = "none";
+function openGift() {
 
   document.getElementById("welcome").style.display = "none";
 
+  document.getElementById("giftBox").style.display = "none";
+
   document.getElementById("mainContent").style.display = "block";
 
-  document.getElementById("music").play();
+  const music = document.getElementById("music");
+  music.play().catch(() => {});
 
-  setTimeout(typeWriter,500);
+  document.getElementById("letterText").innerHTML = "";
+  i = 0;
+
+  typeWriter();
 
 }
  const message =
@@ -404,6 +407,12 @@ function typeWriter() {
 
 }
 
+ window.onload = function () {
+  document.getElementById("welcome").style.display = "block";
+  document.getElementById("giftBox").style.display = "block";
+  document.getElementById("mainContent").style.display = "none";
+};
+ 
 </script>
 
 </body>
