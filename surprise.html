@@ -23,6 +23,22 @@ color:white;
 .container{
 padding:30px;
 }
+ .fade-in{
+opacity:0;
+animation:fadeIn 2s forwards;
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
 
 h1{
 font-size:45px;
@@ -226,7 +242,7 @@ visibility:hidden;
 Open My Gift
 </div>
 
-<div id="mainContent" style="display:none;">
+<div id="mainContent" class="fade-in" style="display:none;">
 <p>
 May Allah bless your life with happiness,
 peace,
@@ -411,8 +427,13 @@ function openGift() {
 
   document.getElementById("mainContent").style.display = "block";
 
-  const music = document.getElementById("music");
-  music.play().catch(() => {});
+const music = document.getElementById("music");
+
+music.currentTime = 0;
+
+music.play().catch(() => {
+    console.log("Music couldn't start automatically.");
+});
 
   document.getElementById("letterText").innerHTML = "";
   i = 0;
