@@ -351,6 +351,27 @@ filter:brightness(.9);
 }
 
 }
+ .goldSparkle{
+position:fixed;
+font-size:20px;
+pointer-events:none;
+animation:goldBurst 2s linear forwards;
+z-index:9999;
+}
+
+@keyframes goldBurst{
+
+0%{
+opacity:1;
+transform:translateY(0) scale(0.5);
+}
+
+100%{
+opacity:0;
+transform:translateY(-180px) rotate(360deg) scale(1.5);
+}
+
+}
 </style>
 </head>
 
@@ -634,6 +655,29 @@ function typeWriter() {
   }
 
 }
+ function createGoldSparkle(){
+
+  const sparkle = document.createElement("div");
+
+  sparkle.className = "goldSparkle";
+
+  sparkle.innerHTML = "⭐";
+
+  sparkle.style.left =
+  (window.innerWidth / 2 + Math.random()*200 - 100) + "px";
+
+  sparkle.style.top =
+  (window.innerHeight / 2 + Math.random()*100 - 50) + "px";
+
+  document.body.appendChild(sparkle);
+
+  setTimeout(function(){
+
+    sparkle.remove();
+
+  },2000);
+
+}
 function blowCandles(){
 
   const cake = document.getElementById("cake");
@@ -655,6 +699,15 @@ cake.onclick = null;
         createConfetti();
 
     }, i * 80);
+
+}
+ for(let i = 0; i < 30; i++){
+
+    setTimeout(function(){
+
+        createGoldSparkle();
+
+    }, i * 60);
 
 }
 
