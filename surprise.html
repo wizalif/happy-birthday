@@ -372,6 +372,42 @@ transform:translateY(-180px) rotate(360deg) scale(1.5);
 }
 
 }
+ #memoryTimeline{
+margin-top:50px;
+padding:20px;
+}
+
+#memoryTimeline h2{
+font-size:32px;
+margin-bottom:30px;
+color:white;
+}
+
+.memoryCard{
+background:rgba(255,255,255,.15);
+backdrop-filter:blur(10px);
+border-radius:20px;
+padding:20px;
+margin:30px auto;
+max-width:420px;
+box-shadow:0 0 20px rgba(255,255,255,.25);
+transition:.4s;
+}
+
+.memoryCard:hover{
+transform:scale(1.05);
+}
+
+.memoryCard img{
+width:100%;
+border-radius:15px;
+margin-bottom:15px;
+}
+
+.memoryCard p{
+font-size:20px;
+color:white;
+}
 </style>
 </head>
 
@@ -428,6 +464,26 @@ Tap the cake to blow out the candles! ✨
 <h2>💌 My Letter</h2>
  
 <p id="letterText"></p>
+</div>
+ <div id="memoryTimeline">
+
+<h2>📸 Our Beautiful Memories ❤️</h2>
+
+<div class="memoryCard">
+<img src="photo1.jpg" class="photo">
+<p>Every picture with you is a beautiful memory. ❤️</p>
+</div>
+
+<div class="memoryCard">
+<img src="photo2.jpg" class="photo">
+<p>Thank you for bringing happiness into my life. 🌹</p>
+</div>
+
+<div class="memoryCard">
+<img src="photo3.jpg" class="photo">
+<p>May Allah protect our smiles forever. 🤲❤️</p>
+</div>
+
 </div>
  <canvas id="fireworks"></canvas>
 <audio id="music" loop>
