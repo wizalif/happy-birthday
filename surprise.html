@@ -619,16 +619,23 @@ music.play().catch(() => {
     console.log("Music couldn't start automatically.");
 });
 
-  document.getElementById("letterText").innerHTML = "";
-  i = 0;
+if(i === 0){
 
-  typeWriter();
+    document.getElementById("letterText").innerHTML = "";
+
+    typeWriter();
+
+}
  setTimeout(function(){
 
   document.getElementById("finalMessage").style.display = "block";
 
 },15000);
- setInterval(createLoveQuote,4000);
+if(loveQuoteInterval === null){
+
+    loveQuoteInterval = setInterval(createLoveQuote,4000);
+
+}
 
 }
  const message =
@@ -713,6 +720,7 @@ cake.onclick = null;
 
 }
 
+ let loveQuoteInterval = null;
  const loveQuotes = [
 
 "I Love You ❤️",
