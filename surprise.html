@@ -222,6 +222,25 @@ opacity:0;
 visibility:hidden;
 }
 }
+ #finalMessage{
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+font-size:50px;
+font-weight:bold;
+color:white;
+text-shadow:0 0 20px #ff4d6d;
+display:none;
+z-index:20000;
+animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+0%{transform:translate(-50%,-50%) scale(1);}
+50%{transform:translate(-50%,-50%) scale(1.1);}
+100%{transform:translate(-50%,-50%) scale(1);}
+}
 </style>
 </head>
 
@@ -439,6 +458,11 @@ music.play().catch(() => {
   i = 0;
 
   typeWriter();
+ setTimeout(function(){
+
+  document.getElementById("finalMessage").style.display = "block";
+
+},15000);
 
 }
  const message =
@@ -484,5 +508,8 @@ window.onload = function () {
 
 </script>
 
+ <div id="finalMessage">
+❤️ I Love You Forever ❤️
+</div>
 </body>
 </html>
