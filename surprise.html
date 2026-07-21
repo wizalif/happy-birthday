@@ -465,6 +465,36 @@ box-shadow:0 0 10px #fff;
 }
 
 }
+ #nextPage{
+
+opacity:0;
+
+transform:translateY(40px);
+
+animation:showNext 1s forwards;
+
+animation-play-state:paused;
+
+}
+ @keyframes showNext{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
 </style>
 </head>
 
