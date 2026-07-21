@@ -63,6 +63,8 @@ max-width:90%;
 border-radius:20px;
 box-shadow:0 0 20px rgba(0,0,0,.3);
 margin-top:20px;
+opacity:1;
+transition:opacity 1s ease;
 }
 
 .letter{
@@ -332,9 +334,22 @@ const photos = [
 let current = 0;
 
 setInterval(function () {
-    current = (current + 1) % photos.length;
-    document.getElementById("slide").src = photos[current];
-}, 2500);
+
+    const slide = document.getElementById("slide");
+
+    slide.style.opacity = "0";
+
+    setTimeout(function(){
+
+        current = (current + 1) % photos.length;
+
+        slide.src = photos[current];
+
+        slide.style.opacity = "1";
+
+    },500);
+
+},2500);
 
 // Falling Hearts ❤️
 function createHeart() {
