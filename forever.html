@@ -96,22 +96,45 @@ background:#ffe4ee;
 
 <body>
 
-<div class="container">
+<div class="container" id="page1">
 
 <h1>❤️ My Beautiful Situuu ❤️</h1>
 
 <p>
-
 There is one last question waiting for you...
-
 🥹❤️
-
 </p>
-  <button id="continueBtn">
+
+<button id="continueBtn">
 ❤️ Continue ❤️
 </button>
 
 </div>
+
+<div class="container" id="page2" style="display:none;">
+
+<h1>💍 Will You Stay With Me Forever? ❤️</h1>
+
+<p>
+You are the best gift Allah has given me. 🤲❤️
+</p>
+
+<button id="yesBtn">
+YES ❤️
+</button>
+
+</div>
+  <script>
+
+document.getElementById("continueBtn").onclick = function(){
+
+    document.getElementById("page1").style.display = "none";
+
+    document.getElementById("page2").style.display = "block";
+
+};
+
+</script>
 
 </body>
 
