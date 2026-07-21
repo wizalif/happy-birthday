@@ -479,17 +479,17 @@ Tap the cake to blow out the candles! ✨
 
 <h2>📸 Our Beautiful Memories ❤️</h2>
 
-<div class="memoryCard">
+<div class="memoryCard hiddenCard">
 <img src="photo1.jpg" class="photo">
 <p>Every picture with you is a beautiful memory. ❤️</p>
 </div>
 
-<div class="memoryCard">
+<div class="memoryCard hiddenCard">
 <img src="photo2.jpg" class="photo">
 <p>Thank you for bringing happiness into my life. 🌹</p>
 </div>
 
-<div class="memoryCard">
+<div class="memoryCard hiddenCard">
 <img src="photo3.jpg" class="photo">
 <p>May Allah protect our smiles forever. 🤲❤️</p>
 </div>
@@ -843,6 +843,27 @@ window.onload = function () {
   },3000);
 
 };
+ const cards = document.querySelectorAll(".hiddenCard");
+
+function showCards(){
+
+    cards.forEach(function(card){
+
+        const top = card.getBoundingClientRect().top;
+
+        if(top < window.innerHeight - 100){
+
+            card.classList.add("showCard");
+
+        }
+
+    });
+
+}
+
+window.addEventListener("scroll", showCards);
+
+showCards();
 
 </script>
 
