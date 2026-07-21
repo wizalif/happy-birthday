@@ -418,6 +418,53 @@ transition:all .8s ease;
 opacity:1;
 transform:translateY(0);
 }
+ #nextBtn{
+
+background:#ffffff;
+
+color:#ff4d6d;
+
+border:none;
+
+padding:15px 35px;
+
+font-size:22px;
+
+font-weight:bold;
+
+border-radius:50px;
+
+cursor:pointer;
+
+box-shadow:0 0 20px rgba(255,255,255,.5);
+
+animation:nextGlow 1.5s infinite;
+
+transition:.3s;
+
+}
+
+#nextBtn:hover{
+
+transform:scale(1.08);
+
+}
+
+@keyframes nextGlow{
+
+0%{
+box-shadow:0 0 10px #fff;
+}
+
+50%{
+box-shadow:0 0 30px #fff;
+}
+
+100%{
+box-shadow:0 0 10px #fff;
+}
+
+}
 </style>
 </head>
 
@@ -692,9 +739,9 @@ if(i === 0){
     typeWriter();
 
 }
- setTimeout(function(){
+setTimeout(function(){
 
-  document.getElementById("finalMessage").style.display = "block";
+    document.getElementById("nextPage").style.display = "block";
 
 },15000);
 if(loveQuoteInterval === null){
@@ -867,8 +914,16 @@ showCards();
 
 </script>
 
- <div id="finalMessage">
-❤️ I Love You Forever ❤️
+<div id="nextPage" style="display:none; margin-top:30px;">
+
+<a href="forever.html">
+
+<button id="nextBtn">
+Continue ❤️
+</button>
+
+</a>
+
 </div>
 </body>
 </html>
