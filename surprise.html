@@ -241,6 +241,41 @@ animation:pulse 1.5s infinite;
 50%{transform:translate(-50%,-50%) scale(1.1);}
 100%{transform:translate(-50%,-50%) scale(1);}
 }
+ .loveQuote{
+position:fixed;
+left:0;
+top:0;
+font-size:22px;
+font-weight:bold;
+color:white;
+text-shadow:0 0 10px #ff4d6d;
+pointer-events:none;
+opacity:0;
+animation:floatQuote 6s linear forwards;
+z-index:9998;
+}
+
+@keyframes floatQuote{
+
+0%{
+opacity:0;
+transform:translateY(30px);
+}
+
+20%{
+opacity:1;
+}
+
+80%{
+opacity:1;
+}
+
+100%{
+opacity:0;
+transform:translateY(-150px);
+}
+
+}
 </style>
 </head>
 
@@ -463,6 +498,7 @@ music.play().catch(() => {
   document.getElementById("finalMessage").style.display = "block";
 
 },15000);
+ setInterval(createLoveQuote,4000);
 
 }
  const message =
@@ -487,6 +523,47 @@ function typeWriter() {
     i++;
     setTimeout(typeWriter, 50);
   }
+
+}
+
+ const loveQuotes = [
+
+"I Love You ❤️",
+
+"You Are My Happiness 🥹",
+
+"Forever With You 💖",
+
+"My Beautiful Situuu 🌹",
+
+"Allah Bless You 🤲❤️",
+
+"You Mean Everything To Me ❤️"
+
+];
+
+function createLoveQuote(){
+
+const quote = document.createElement("div");
+
+quote.className = "loveQuote";
+
+quote.innerHTML =
+loveQuotes[Math.floor(Math.random()*loveQuotes.length)];
+
+quote.style.left =
+Math.random()*(window.innerWidth-250)+"px";
+
+quote.style.top =
+Math.random()*(window.innerHeight-150)+"px";
+
+document.body.appendChild(quote);
+
+setTimeout(function(){
+
+quote.remove();
+
+},6000);
 
 }
 
