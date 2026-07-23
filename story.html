@@ -77,6 +77,37 @@ line-height:2;
 white-space:pre-line;
 
 }
+  #nextBtn{
+
+margin-top:40px;
+
+background:white;
+
+color:#ff4d6d;
+
+border:none;
+
+padding:15px 35px;
+
+font-size:22px;
+
+font-weight:bold;
+
+border-radius:50px;
+
+cursor:pointer;
+
+transition:.3s;
+
+display:none;
+
+}
+
+#nextBtn:hover{
+
+transform:scale(1.08);
+
+}
 
 h1{
 
@@ -107,6 +138,13 @@ margin-bottom:25px;
 <p id="storyText"></p>
 
 </div>
+  <a href="letter.html">
+
+<button id="nextBtn">
+Continue ❤️
+</button>
+
+</a>
 </div>
 
   <script>
@@ -164,6 +202,11 @@ document.getElementById("storyText").innerHTML += story.charAt(i);
 i++;
 
 setTimeout(typeStory,35);
+
+}
+      else{
+
+document.getElementById("nextBtn").style.display="inline-block";
 
 }
 
