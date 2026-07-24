@@ -259,11 +259,11 @@ transform:translateY(-10px);
 <p id="letterText"></p>
   <div id="nextPage" style="display:none; margin-top:30px;">
 
-<a href="end.html">
+<a href="end.html" onclick="finalTransition()">
 
 <button id="nextBtn">
 
-One Last Surprise... ❤️
+Open Final Chapter 🌹
 
 </button>
 
@@ -330,6 +330,13 @@ heart.remove();
 setInterval(createHeart,700);
 window.onload = typeWriter;
 
+    function finalTransition(){
+
+document.body.style.transition="2s";
+
+document.body.style.opacity="0";
+
+}
 </script>
 </body>
 
