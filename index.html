@@ -13,7 +13,17 @@ display:flex;
 justify-content:center;
 align-items:center;
 height:100vh;
-background:linear-gradient(135deg,#ff9ec4,#ffd6e8);
+background:linear-gradient(
+135deg,
+#4a0029,
+#7a003d,
+#b0005d,
+#ff4d8d
+);
+
+background-size:400% 400%;
+
+animation:bgMove 12s ease infinite;
 text-align:center;
 overflow:hidden;
 }
@@ -53,6 +63,21 @@ transition:.3s;
 button:hover{
 transform:scale(1.05);
 background:#ff0055;
+  @keyframes bgMove{
+
+0%{
+background-position:0% 50%;
+}
+
+50%{
+background-position:100% 50%;
+}
+
+100%{
+background-position:0% 50%;
+}
+
+}
 }
 </style>
 
