@@ -59,9 +59,39 @@ h1{
 
 font-size:45px;
 
+opacity:0;
+
+animation:titleShow 3s forwards;
+
 text-shadow:
 0 0 15px white,
 0 0 35px pink;
+
+}
+
+
+@keyframes titleShow{
+
+0%{
+
+opacity:0;
+
+transform:translateY(40px);
+
+filter:blur(10px);
+
+}
+
+
+100%{
+
+opacity:1;
+
+transform:translateY(0);
+
+filter:blur(0);
+
+}
 
 }
 
@@ -115,6 +145,127 @@ transform:scale(1);
 }
 
 
+  .heart{
+
+position:fixed;
+
+top:-40px;
+
+font-size:25px;
+
+pointer-events:none;
+
+animation:heartFall linear forwards;
+
+}
+
+
+@keyframes heartFall{
+
+0%{
+
+transform:translateY(0);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(110vh);
+
+opacity:0;
+
+}
+
+}
+
+
+.petal{
+
+position:fixed;
+
+top:-40px;
+
+font-size:22px;
+
+pointer-events:none;
+
+animation:petalFall linear forwards;
+
+}
+
+
+@keyframes petalFall{
+
+0%{
+
+transform:translateY(0) rotate(0);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(110vh) rotate(360deg);
+
+opacity:0;
+
+}
+
+}
+
+
+.sparkle{
+
+position:fixed;
+
+font-size:20px;
+
+pointer-events:none;
+
+animation:sparkleMove 2s forwards;
+
+}
+
+
+@keyframes sparkleMove{
+
+0%{
+
+opacity:1;
+
+transform:scale(.5);
+
+}
+
+100%{
+
+opacity:0;
+
+transform:scale(2);
+
+}
+
+}
+  #fireworks{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+pointer-events:none;
+
+z-index:999;
+
+}
 </style>
 
 </head>
@@ -122,6 +273,7 @@ transform:scale(1);
 
 <body>
 
+  <canvas id="fireworks"></canvas>
 
 <div class="container">
 
@@ -152,6 +304,160 @@ Forever & Always ❤️
 </div>
 
 
+  <script>
+
+function createHeart(){
+
+const heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*window.innerWidth+"px";
+
+heart.style.animationDuration=(4+Math.random()*3)+"s";
+
+document.body.appendChild(heart);
+
+
+setTimeout(()=>{
+
+heart.remove();
+
+},7000);
+
+}
+
+
+setInterval(createHeart,500);
+
+
+
+function createPetal(){
+
+const petal=document.createElement("div");
+
+petal.className="petal";
+
+petal.innerHTML="🌹";
+
+petal.style.left=Math.random()*window.innerWidth+"px";
+
+petal.style.animationDuration=(5+Math.random()*4)+"s";
+
+document.body.appendChild(petal);
+
+
+setTimeout(()=>{
+
+petal.remove();
+
+},9000);
+
+}
+
+
+setInterval(createPetal,1200);
+
+
+
+function createSparkle(){
+
+const sparkle=document.createElement("div");
+
+sparkle.className="sparkle";
+
+sparkle.innerHTML="✨";
+
+sparkle.style.left=Math.random()*window.innerWidth+"px";
+
+sparkle.style.top=Math.random()*window.innerHeight+"px";
+
+document.body.appendChild(sparkle);
+
+
+setTimeout(()=>{
+
+sparkle.remove();
+
+},2000);
+
+}
+
+
+setInterval(createSparkle,300);
+
+
+    const canvas=document.getElementById("fireworks");
+
+const ctx=canvas.getContext("2d");
+
+
+canvas.width=window.innerWidth;
+
+canvas.height=window.innerHeight;
+
+
+
+function firework(){
+
+const x=Math.random()*canvas.width;
+
+const y=Math.random()*(canvas.height/2);
+
+
+for(let i=0;i<40;i++){
+
+ctx.beginPath();
+
+ctx.fillStyle="gold";
+
+ctx.arc(
+
+x+Math.random()*100-50,
+
+y+Math.random()*100-50,
+
+3,
+
+0,
+
+Math.PI*2
+
+);
+
+ctx.fill();
+
+}
+
+
+setTimeout(()=>{
+
+ctx.clearRect(
+0,
+0,
+canvas.width,
+canvas.height
+);
+
+},600);
+
+}
+
+
+setInterval(firework,1500);
+
+
+
+window.addEventListener("resize",()=>{
+
+canvas.width=window.innerWidth;
+
+canvas.height=window.innerHeight;
+
+});
+</script>
 </body>
 
 </html>
