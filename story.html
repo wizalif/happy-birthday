@@ -21,7 +21,17 @@ body{
 
 font-family:Arial,sans-serif;
 
-background:linear-gradient(135deg,#ff6fa5,#ffd6e8);
+background:linear-gradient(
+135deg,
+#5E0035,
+#8B004F,
+#C2185B,
+#E91E63
+);
+
+background-size:400% 400%;
+
+animation:bgMove 12s ease infinite;
 
 color:white;
 
@@ -32,6 +42,27 @@ text-align:center;
 padding:40px;
 
 }
+@keyframes bgMove{
+
+0%{
+
+background-position:0% 50%;
+
+}
+
+50%{
+
+background-position:100% 50%;
+
+}
+
+100%{
+
+background-position:0% 50%;
+
+}
+
+}
 
 .container{
 
@@ -40,21 +71,42 @@ max-width:800px;
 margin:auto;
 
 }
-  .storyBox{
+.storyBox{
 
-background:rgba(255,255,255,.15);
+background:rgba(255,255,255,.12);
 
-backdrop-filter:blur(10px);
+backdrop-filter:blur(18px);
 
-padding:30px;
+-webkit-backdrop-filter:blur(18px);
 
-border-radius:25px;
+padding:35px;
+
+border-radius:30px;
 
 margin-top:40px;
 
-box-shadow:0 0 25px rgba(255,255,255,.2);
+border:1px solid rgba(255,255,255,.25);
+
+box-shadow:
+
+0 0 30px rgba(255,255,255,.15),
+
+0 0 60px rgba(255,105,180,.20);
 
 text-align:left;
+
+transition:.4s;
+
+}
+  .storyBox:hover{
+
+transform:translateY(-5px);
+
+box-shadow:
+
+0 0 40px rgba(255,255,255,.25),
+
+0 0 80px rgba(255,105,180,.35);
 
 }
 
@@ -66,28 +118,44 @@ font-size:30px;
 
 margin-bottom:25px;
 
+color:white;
+
+text-shadow:
+
+0 0 10px #ffffff,
+
+0 0 20px #ff69b4;
+
 }
 
 #storyText{
 
-font-size:21px;
+font-size:22px;
 
-line-height:2;
+line-height:2.2;
 
 white-space:pre-line;
 
+color:#fff;
+
+letter-spacing:.5px;
+
+text-shadow:0 0 8px rgba(255,255,255,.15);
+
+animation:textFade 2s ease;
+
 }
-  #nextBtn{
+#nextBtn{
 
 margin-top:40px;
 
 background:white;
 
-color:#ff4d6d;
+color:#8B004F;
 
 border:none;
 
-padding:15px 35px;
+padding:16px 40px;
 
 font-size:22px;
 
@@ -97,9 +165,17 @@ border-radius:50px;
 
 cursor:pointer;
 
+display:none;
+
+box-shadow:
+
+0 0 15px rgba(255,255,255,.6),
+
+0 0 35px rgba(255,105,180,.5);
+
 transition:.3s;
 
-display:none;
+animation:buttonGlow 1.8s infinite;
 
 }
 
@@ -115,9 +191,38 @@ font-size:46px;
 
 margin-bottom:25px;
 
+color:white;
+
+text-shadow:
+
+0 0 10px #ffffff,
+
+0 0 25px #ff69b4,
+
+0 0 45px #ff1493;
+
+animation:titleGlow 2s infinite alternate;
+
 }
 
-  .heart{
+.heart{
+
+position:fixed;
+
+top:-40px;
+
+font-size:26px;
+
+pointer-events:none;
+
+z-index:9999;
+
+filter:drop-shadow(0 0 8px #ff69b4);
+
+animation:fallHeart linear forwards;
+
+}
+  .petal{
 
 position:fixed;
 
@@ -127,10 +232,43 @@ font-size:24px;
 
 pointer-events:none;
 
-animation:fallHeart linear forwards;
+z-index:9998;
+
+filter:drop-shadow(0 0 8px #ff4d6d);
+
+animation:petalFall linear forwards;
 
 }
 
+
+@keyframes petalFall{
+
+0%{
+
+transform:
+
+translateY(0)
+
+rotate(0deg);
+
+opacity:1;
+
+}
+
+
+100%{
+
+transform:
+
+translateY(110vh)
+
+rotate(360deg);
+
+opacity:0;
+
+}
+
+}
 @keyframes fallHeart{
 
 0%{
@@ -171,6 +309,84 @@ to{
 opacity:1;
 
 transform:translateY(0);
+
+}
+
+}
+  @keyframes titleGlow{
+
+from{
+
+text-shadow:
+
+0 0 10px white,
+
+0 0 20px #ff69b4;
+
+}
+
+to{
+
+text-shadow:
+
+0 0 20px white,
+
+0 0 40px #ff1493,
+
+0 0 60px #ff69b4;
+
+}
+
+}
+  @keyframes textFade{
+
+from{
+
+opacity:0;
+
+transform:translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+  #nextBtn:hover{
+
+transform:scale(1.1);
+
+background:#ffe4ee;
+
+}
+
+
+@keyframes buttonGlow{
+
+0%{
+
+box-shadow:0 0 10px white;
+
+}
+
+50%{
+
+box-shadow:
+
+0 0 30px white,
+
+0 0 50px #ff69b4;
+
+}
+
+100%{
+
+box-shadow:0 0 10px white;
 
 }
 
@@ -258,6 +474,36 @@ heart.remove();
 }
 
 setInterval(createHeart,500);
+    function createPetal(){
+
+const petal = document.createElement("div");
+
+petal.className="petal";
+
+petal.innerHTML="🌹";
+
+
+petal.style.left =
+Math.random()*window.innerWidth+"px";
+
+
+petal.style.animationDuration =
+(5 + Math.random()*4)+"s";
+
+
+document.body.appendChild(petal);
+
+
+setTimeout(function(){
+
+petal.remove();
+
+},9000);
+
+}
+
+
+setInterval(createPetal,1500);
 </script>
   <script>
 
