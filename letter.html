@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Letter ❤️</title>
+
+  <style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+background:linear-gradient(135deg,#ff6fa5,#ffd6e8);
+
+font-family:Arial,sans-serif;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+min-height:100vh;
+
+padding:30px;
+
+overflow-x:hidden;
+
+}
+
+.letter{
+
+background:white;
+
+max-width:750px;
+
+padding:35px;
+
+border-radius:25px;
+
+box-shadow:0 0 30px rgba(0,0,0,.2);
+
+text-align:center;
+
+animation:fadeIn 2s ease;
+
+}
+
+h1{
+
+color:#ff4d6d;
+
+margin-bottom:20px;
+
+font-size:42px;
+
+}
+
+#letterText{
+
+font-size:22px;
+
+line-height:1.9;
+
+color:#444;
+
+white-space:pre-line;
+
+}
+
+@keyframes fadeIn{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="letter">
+
+<h1>💌 My Letter For You ❤️</h1>
+
+<p id="letterText"></p>
+
+</div>
+
+  <script>
+
+const message = `
+ልቤ
+ወደ አንቺ ስመለከት ደስታዬን ህልሜን መኖሪያዬን እንዳገኘሁ አውቃለሁ። ወደ ሕይወቴ ከመምጣትሽ በፊት ራሴን በፍቅር እንደዚህ ሰላማዊ እና ጠንካራ ልሆን እንደምችል አላውቅም ነበር።በፍቅር ላይ ጠንካራ ሰው አድርገሺኛል።አንቺ ከማንነቴ ውጭ ሌላ ሰው እንድሆን አትጠይቂኝም። ከአንቺ ጋር አእምሮዬ ሰላም ያገኛል፣ ልቤም ደህንነት ይሰማዋል። ከጎኔ በመጓዝሽ፣ ቀናቱ ከባድ ሲሆኑ እጄን በመያዝሽ፣ እና በደስታ ጊዜያት አብረሽኝ በመሳቅሽ አመሰግናለሁ። አንቺ ለኔ ደስታዬ ፈገግታዬ አምነቴን የጣልኩብሽ ትልቁ ሀብቴ ትልቁ ህልሜም ነሽ። ትላንትም ዛሬም በሚቀጥሉት ቀናቶች ሁሉ እወድሻለሁ።
+ያንቺው አፍቃሪ 😁😊 ሺ አመት ኑሪልኝ 😊
+`;
+
+let i = 0;
+
+function typeWriter(){
+
+if(i < message.length){
+
+document.getElementById("letterText").innerHTML += message.charAt(i);
+
+i++;
+
+setTimeout(typeWriter,35);
+
+}
+
+}
+
+window.onload = typeWriter;
+
+</script>
+</body>
+
+</html>
