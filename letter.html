@@ -97,6 +97,26 @@ transform:translateY(0);
 
 }
 
+    #nextBtn{
+
+background:#ff4d6d;
+color:white;
+border:none;
+padding:15px 35px;
+font-size:22px;
+font-weight:bold;
+border-radius:40px;
+cursor:pointer;
+transition:.3s;
+box-shadow:0 0 20px rgba(255,77,109,.5);
+
+}
+
+#nextBtn:hover{
+
+transform:scale(1.08);
+
+}
 </style>
 </head>
 
@@ -107,6 +127,19 @@ transform:translateY(0);
 <h1>💌 My Letter For You ❤️</h1>
 
 <p id="letterText"></p>
+  <div id="nextPage" style="display:none; margin-top:30px;">
+
+<a href="end.html">
+
+<button id="nextBtn">
+
+One Last Surprise... ❤️
+
+</button>
+
+</a>
+
+</div>
 
 </div>
 
@@ -129,6 +162,10 @@ document.getElementById("letterText").innerHTML += message.charAt(i);
 i++;
 
 setTimeout(typeWriter,35);
+
+}else{
+
+document.getElementById("nextPage").style.display = "block";
 
 }
 
