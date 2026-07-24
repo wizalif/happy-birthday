@@ -14,7 +14,17 @@ box-sizing:border-box;
 
 body{
 font-family:Arial,sans-serif;
-background:linear-gradient(135deg,#ff6fa5,#ffd6e8);
+background:linear-gradient(
+135deg,
+#3d0028,
+#6a003f,
+#a0005a,
+#ff4d8d
+);
+
+background-size:400% 400%;
+
+animation:bgMove 12s ease infinite;
 text-align:center;
 overflow-x:hidden;
 color:white;
@@ -28,6 +38,21 @@ opacity:0;
 animation:fadeIn 2s forwards;
 }
 
+ @keyframes bgMove{
+
+0%{
+background-position:0% 50%;
+}
+
+50%{
+background-position:100% 50%;
+}
+
+100%{
+background-position:0% 50%;
+}
+
+}
 @keyframes fadeIn{
 from{
 opacity:0;
